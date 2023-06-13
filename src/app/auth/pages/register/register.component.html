@@ -1,68 +1,90 @@
 <div class="d-grid align-items-center justify-content-center mt-5">
-  <div class="mb-3">
-      <h4
-          class="text-lg text-center"
-          color="primary"
-      >
-          Registro
-      </h4>
-  </div>
+    <div class="mb-3">
+        <h4
+            class="text-lg text-center"
+            color="primary"
+        >
+            Registro
+        </h4>
+    </div>
 
-  <mat-form-field>
-    <mat-label>Correo Electrónico</mat-label>
-    <input
-        type="email"
-        matInput
+    <form
+        [formGroup]="myForm"
+        (ngSubmit)="crear()"
+        class="d-grid"
     >
-</mat-form-field>
+        <span *ngIf="isValidField('email')" class="text-danger">{{ getFieldError('email') }}</span>
+        <mat-form-field>
+            <mat-label>Correo Electrónico</mat-label>
+            <input
+                type="email"
+                matInput
+                formControlName="email"
+            >
+        </mat-form-field>
 
-  <mat-form-field>
-      <mat-label>Nombre de usuario</mat-label>
-      <input
-          type="text"
-          matInput
-      >
-  </mat-form-field>
+        <span *ngIf="isValidField('nombre')" class="text-danger">{{ getFieldError('nombre') }}</span>
+        <mat-form-field>
+            <mat-label>Nombre de usuario</mat-label>
+            <input
+                type="text"
+                matInput
+                formControlName="nombre"
+            >
+        </mat-form-field>
 
-  <mat-form-field>
-      <mat-label>Contraseña</mat-label>
-      <input
-          type="password"
-          matInput
-      >
-  </mat-form-field>
+        <span *ngIf="isValidField('password')" class="text-danger">{{ getFieldError('password') }}</span>
+        <mat-form-field>
+            <mat-label>Contraseña</mat-label>
+            <input
+                type="password"
+                matInput
+                formControlName="password"
+            >
+        </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Confirmar contraseña</mat-label>
-    <input
-        type="password"
-        matInput
-    >
-</mat-form-field>
+        <span *ngIf="isValidField('password2')" class="text-danger">{{ getFieldError('password2') }}</span>
+        <mat-form-field>
+            <mat-label>Confirmar contraseña</mat-label>
+            <input
+                type="password"
+                matInput
+                formControlName="password2"
+            >
+        </mat-form-field>
 
-<mat-form-field>
-  <mat-label>¿Qué quieres ser?</mat-label>
-  <mat-select>
-    <mat-option *ngFor="let rol of roles" [value]="rol">
-      {{rol}}
-    </mat-option>
-  </mat-select>
-</mat-form-field>
+        <span *ngIf="isValidField('rol')" class="text-danger">{{ getFieldError('rol') }}</span>
+        <mat-form-field>
+            <mat-label>¿Qué quieres ser?</mat-label>
+            <mat-select formControlName="rol">
+                <mat-option
+                    *ngFor="let rol of roles"
+                    [value]="rol"
+                >
+                    {{rol}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
 
-  <button
-      mat-button
-      mat-flat-button
-      color="primary"
-      class="mb-3"
-  >
-      ingresar
-  </button>
-  <mat-divider></mat-divider>
-  <div class="d-flex justify-content-center">
-      <i class=" h2 p-1 fa-brands fa-square-facebook"></i>
-      <i class=" h2 p-1 fa-brands fa-square-twitter"></i>
-      <i class=" h2 p-1 fa-brands fa-square-instagram"></i>
-      <i class=" h2 p-1 fa-brands fa-square-google-plus"></i>
-      <i class="h2 p-1 fa-brands fa-brands fa-github"></i>
-  </div>
+        <button
+            mat-button
+            mat-flat-button
+            color="primary"
+            class="mb-3"
+        >
+            ingresar
+        </button>
+
+    </form>
+    <mat-divider></mat-divider>
+    <div class="d-flex justify-content-center">
+        <i class=" h2 p-1 fa-brands fa-square-facebook"></i>
+        <i class=" h2 p-1 fa-brands fa-square-twitter"></i>
+        <i class=" h2 p-1 fa-brands fa-square-instagram"></i>
+        <i class=" h2 p-1 fa-brands fa-square-google-plus"></i>
+        <i class="h2 p-1 fa-brands fa-brands fa-github"></i>
+    </div>
+    <div class="mt-3 text-center">
+        <a href="#">¿Ya tienes una cuenta?</a>
+    </div>
 </div>
