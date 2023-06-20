@@ -1,4 +1,47 @@
 
+<mat-sidenav-container fullscreen>
+
+  <mat-sidenav #sidenav mode="push" [ngStyle]="{ width:'250px'}">
+    <mat-toolbar color="accent">
+      <span>Menú</span>
+      <span class="spacer"></span>
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar>
+  </mat-sidenav>
+
+  <!-- ToolBar-->
+  <div class="row">
+    <!-- Icono del SideNav-->
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <!-- Columna Vacía para centrar el título-->
+      <div class="col"></div>
+
+        <!-- Columna del título y logo-->
+      <section class="row-md d-flex text-center">
+        <h2 class="display-4 mt-3 text-white">LAT</h2>
+        <img [src]="imagePath" class="mt-3 rounded-circle" style="height:55px;">
+    </section>
+
+    <!-- Iconos, login, carrito, etc-->
+      <div class="col text-end">
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>favorite</mat-icon>
+      </button>
+
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>share</mat-icon>
+      </button>
+      </div>
+
+    </mat-toolbar>
+
+  </div>
+
 <router-outlet/>
 
-
+</mat-sidenav-container>

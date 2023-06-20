@@ -4,6 +4,7 @@ import { LayoutComponent } from './layout/layout/layout.component';
 import { Error404Component } from './pages/error404/error404.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { MaterialModule } from '../material/material.module';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     CommonModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    MaterialModule
   ],
   exports:[
     LayoutComponent,
