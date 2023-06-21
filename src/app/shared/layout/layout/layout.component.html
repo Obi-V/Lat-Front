@@ -1,7 +1,9 @@
 
 <mat-sidenav-container fullscreen>
-
+  <!-- SideNav Desplegable-->
   <mat-sidenav #sidenav mode="push" [ngStyle]="{ width:'250px'}">
+
+    <!-- Desplegable si está logueado -->
     <mat-toolbar color="accent">
       <span>Menú</span>
       <span class="spacer"></span>
@@ -9,7 +11,30 @@
         <mat-icon>menu</mat-icon>
       </button>
     </mat-toolbar>
+    <div *ngIf="getRootUrl()!='auth'; else auth">
+      <mat-nav-list >
+        <mat-list-item *ngFor="let item of sidebarItems"
+        [routerLink]="item.url"
+        >
+        <mat-icon matListItemIcon>{{item.icon}}</mat-icon>
+        {{item.label}}
+        </mat-list-item>
+      </mat-nav-list>
+    </div>
+
+    <!-- Desplegable si no está logueado -->
+    <ng-template #auth>
+      <mat-nav-list >
+        <mat-list-item *ngFor="let item of noLogeado"
+        [routerLink]="item.url"
+        >
+        <mat-icon matListItemIcon>{{item.icon}}</mat-icon>
+        {{item.label}}
+        </mat-list-item>
+      </mat-nav-list>
+    </ng-template>
   </mat-sidenav>
+
 
   <!-- ToolBar-->
   <div class="row">
@@ -43,5 +68,6 @@
   </div>
 
 <router-outlet/>
+
 
 </mat-sidenav-container>

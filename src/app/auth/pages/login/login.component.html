@@ -7,7 +7,11 @@
                 Login
             </h2>
         </div>
-
+        <form
+        [formGroup]="myForm"
+        (ngSubmit)="submit()"
+        class="d-grid"
+    >
         <mat-form-field>
             <mat-label>Usuario</mat-label>
             <input
@@ -31,6 +35,7 @@
         >
             ingresar
         </button>
+        </form>
         <div class="text-center mb-2">
           <a href="#">¿No tienes cuenta?</a>
         </div>

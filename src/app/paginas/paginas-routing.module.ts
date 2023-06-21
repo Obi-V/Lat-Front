@@ -6,6 +6,7 @@ import { CategoriasComponent } from './pages/categorias/categorias.component';
 import { CursoComponent } from './pages/curso/curso.component';
 import { PerfilProfesorComponent } from './pages/perfil-profesor/perfil-profesor.component';
 import { ProfesoresComponent } from './pages/profesores/profesores.component';
+import { AsistenciaComponent } from './pages/asistencia/asistencia.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
       {
         path:'profesores',
         component:ProfesoresComponent
+      },
+      {
+        path:'asistencia',
+        component:AsistenciaComponent
       },
       {
         path:'**',
