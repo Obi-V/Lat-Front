@@ -1,8 +1,88 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* Variables para cambiar el tema de bootstrap sin tener que descargarlo :D */
 :root {
   --primary: #653d3d;
-  --secondary:#7a8e46;
+  --secondary: #7a8e46;
+}
+
+/* Container que no tiene breakpoints */
+.container-fluid {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1140px;
+}
+
+/* Mi propia clase, para cambiar bootstrap sin repetirme */
+.primario {
+  color: var(--primary);
+}
+
+.secundario {
+  color: var(--secondary);
+}
+
+.bg-primario {
+  background-color: var(--primary);
+}
+
+.bg-secundario {
+  background-color: var(--secondary);
+}
+
+/* MODIFICACIÓN DE LA CLASE DE BOTONES DE BOOTSTRAP */
+
+/* Cambia el color */
+.btn-outline-primary {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+.btn-outline-primary:hover {
+  color: #fff;
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+/* Cambia el color del borde */
+.btn-outline-secondary {
+  color: var(--secondary);
+  border-color: var(--secondary);
+}
+.btn-outline-secondary:hover {
+  color: #fff;
+  background-color: var(--secondary);
+  border-color: var(--secondary);
+}
+
+/* Cambia el color al pulsar*/
+.btn-outline-primary:not(:disabled):not(.disabled).active,
+.btn-outline-primary:not(:disabled):not(.disabled):active,
+.show > .btn-outline-primary.dropdown-toggle {
+  color: #fff;
+  background-color: var(--secondary);
+  border-color: var(--primary);
+}
+
+.btn-outline-secondary:not(:disabled):not(.disabled).active,
+.btn-outline-secondary:not(:disabled):not(.disabled):active,
+.show > .btn-outline-secondary.dropdown-toggle {
+  color: #fff;
+  background-color: var(--primary);
+  border-color: var(--secondary);
 }

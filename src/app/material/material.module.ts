@@ -18,6 +18,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   exports:[
@@ -38,13 +39,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatToolbarModule,
     FormsModule,
     ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
-    MatIconModule,
     MatCheckboxModule,
     MatRadioModule,
-
+    MatPaginatorModule
   ]
 })
 export class MaterialModule { }

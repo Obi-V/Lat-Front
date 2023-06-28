@@ -1,0 +1,30 @@
+.btn-prev, .btn-next{
+  background-color: transparent;
+  border: none;
+}
+
+.img-style {
+  margin-left: auto;
+  margin-right: auto;
+  height: 250px;
+  width: 250px;
+}
+
+@media (max-width: 992) {
+  .img-style {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+article{
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+
+@media (max-width: 767px) {
+ .flechas{
+  display: none;
+ }
+}

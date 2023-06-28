@@ -44,43 +44,45 @@ $my-custom-primary: (
 );
 
 $my-custom-secondary: (
-    50 : #ecefe5,
-    100 : #d0d7be,
-    200 : #b1bd92,
-    300 : #91a266,
-    400 : #7a8e46,
-    500 : #627a25,
-    600 : #5a7221,
-    700 : #50671b,
-    800 : #465d16,
-    900 : #344a0d,
-    A100 : #cdff82,
-    A200 : #b9ff4f,
-    A400 : #a5ff1c,
-    A700 : #9bff03,
-    contrast: (
-        50 : #000000,
-        100 : #000000,
-        200 : #000000,
-        300 : #000000,
-        400 : #ffffff,
-        500 : #ffffff,
-        600 : #ffffff,
-        700 : #ffffff,
-        800 : #ffffff,
-        900 : #ffffff,
-        A100 : #000000,
-        A200 : #000000,
-        A400 : #000000,
-        A700 : #000000,
-    )
+  50 : #f1f4e8,
+  100 : #dce4c6,
+  200 : #c5d3a0,
+  300 : #aec17a,
+  400 : #9cb35e,
+  500 : #8ba641,
+  600 : #839e3b,
+  700 : #789532,
+  800 : #6e8b2a,
+  900 : #5b7b1c,
+  A100 : #e5ffb6,
+  A200 : #d2ff83,
+  A400 : #c0ff50,
+  A700 : #b7ff36,
+  contrast: (
+      50 : #000000,
+      100 : #000000,
+      200 : #000000,
+      300 : #000000,
+      400 : #000000,
+      500 : #000000,
+      600 : #000000,
+      700 : #000000,
+      800 : #ffffff,
+      900 : #ffffff,
+      A100 : #000000,
+      A200 : #000000,
+      A400 : #000000,
+      A700 : #000000,
+  )
 );
+
+
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 $Lat-primary: mat.define-palette($my-custom-primary);
-$Lat-accent: mat.define-palette($my-custom-secondary, A200, A100, A400);
+$Lat-accent: mat.define-palette($my-custom-secondary);
 
 // The warn palette is optional (defaults to red).
 $Lat-warn: mat.define-palette(mat.$red-palette);
