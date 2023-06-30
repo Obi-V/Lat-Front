@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { cardCategoria } from 'src/app/interfaces/cardCategoria.interface';
 
 @Component({
   selector: 'app-categorias',
@@ -6,5 +7,38 @@ import { Component } from '@angular/core';
   styleUrls: ['./categorias.component.css']
 })
 export class CategoriasComponent {
+
+  constructor() { }
+
+  public categorias: cardCategoria[] = [
+    { cardTitle: 'Front', img: '../assets/img/Swift.png'},
+    { cardTitle: 'Front', img: '../assets/img/Swift.png'},
+    { cardTitle: 'Front', img: '../assets/img/Swift.png'},
+    { cardTitle: 'Front', img: '../assets/img/Swift.png'},
+    { cardTitle: 'Front', img: '../assets/img/Swift.png'},
+    { cardTitle: 'Front', img: '../assets/img/Swift.png'},
+
+    { cardTitle: 'Front', img: '../assets/img/Swift.png'},
+    { cardTitle: 'Front', img: '../assets/img/Swift.png'},
+    { cardTitle: 'Front', img: '../assets/img/Swift.png'},
+    { cardTitle: 'Front', img: '../assets/img/Swift.png'},
+    { cardTitle: 'Front', img: '../assets/img/Swift.png'},
+    { cardTitle: 'Front', img: '../assets/img/Swift.png'},
+
+    { cardTitle: 'Front', img: '../assets/img/Swift.png'},
+    { cardTitle: 'Front', img: '../assets/img/Swift.png'},
+    { cardTitle: 'Front', img: '../assets/img/Swift.png'},
+    { cardTitle: 'Front', img: '../assets/img/Swift.png'},
+    { cardTitle: 'Front', img: '../assets/img/Swift.png'},
+    { cardTitle: 'Front', img: '../assets/img/Swift.png'},
+
+    { cardTitle: 'Front', img: '../assets/img/Swift.png'},
+    { cardTitle: 'Front', img: '../assets/img/Swift.png'},
+    { cardTitle: 'Front', img: '../assets/img/Swift.png'},
+    { cardTitle: 'Front', img: '../assets/img/Swift.png'},
+    { cardTitle: 'Front', img: '../assets/img/Swift.png'},
+    { cardTitle: 'Front', img: '../assets/img/Swift.png'},
+
+  ]
 
 }

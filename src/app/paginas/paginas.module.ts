@@ -9,6 +9,7 @@ import { MainPageComponent } from './pages/main-page/main-page.component';
 import { MaterialModule } from '../material/material.module';
 import { PageComponentsModule } from './components/page-components.module';
 import { SharedModule } from '../shared/shared.module';
+import { CategoriasComponent } from './pages/categorias/categorias.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { SharedModule } from '../shared/shared.module';
     ProfesoresComponent,
     AsistenciaComponent,
     MainPageComponent,
+    CategoriasComponent
   ],
   imports: [
     CommonModule,

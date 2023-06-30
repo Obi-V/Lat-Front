@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Slide } from '../../../interfaces/slice.interface';
+import { CardPC } from '../../../interfaces/cardPC.interface';
 
 @Component({
   selector: 'app-main-page',
@@ -10,7 +10,7 @@ export class MainPageComponent {
 
 
   //Propiedades para insertar en los slides
-  loMasBuscado: Slide[] = [
+  loMasBuscado: CardPC[] = [
 
     {
       cardTitle: 'Curso de Java y spring Boot 25h', cardSubtitle: 'Armando Redes',
@@ -38,7 +38,7 @@ export class MainPageComponent {
     },
   ]
 
-  profesores: Slide[] = [
+  profesores: CardPC[] = [
 
     {
       cardTitle: 'Lidia Martinez', cardSubtitle: 'Profesora para universitarios',
@@ -66,7 +66,7 @@ export class MainPageComponent {
     },
   ]
 
-  recomendados: Slide[] = [
+  recomendados: CardPC[] = [
     {
       cardTitle: 'Curso de Swift de 0 a experto', cardSubtitle: 'Florencia Venturini',
       cardDescription: 'Breve descripción del curso Curso de Swift de 0 a experto', img: '../assets/img/Swift2.png',

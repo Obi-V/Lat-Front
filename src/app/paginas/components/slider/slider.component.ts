@@ -1,6 +1,6 @@
 import { Component, Input, ViewChild } from '@angular/core';
 import { SlickCarouselComponent } from 'ngx-slick-carousel';
-import { Slide } from 'src/app/interfaces/slice.interface';
+import { CardPC } from 'src/app/interfaces/cardPC.interface';
 
 
 @Component({
@@ -16,7 +16,7 @@ export class SliderComponent {
   title:string = '';
 
   @Input()
-  slides: Slide[] = [];
+  slides: CardPC[] = [];
 
   slideConfig = {
     infinite: true,

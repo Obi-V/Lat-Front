@@ -1,5 +1,5 @@
 
-export interface Slide {
+export interface Profesor {
 
   cardTitle: string
 

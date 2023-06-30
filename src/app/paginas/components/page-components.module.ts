@@ -7,6 +7,7 @@ import { SliderComponent } from './slider/slider.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { MaterialModule } from 'src/app/material/material.module';
+import { CardComponent } from './card/card.component';
 
 
 
@@ -15,6 +16,7 @@ import { MaterialModule } from 'src/app/material/material.module';
     CarouselComponent,
     ProfeDestacadoComponent,
     SliderComponent,
+    CardComponent,
   ],
   imports: [
     CommonModule,
@@ -26,6 +28,7 @@ import { MaterialModule } from 'src/app/material/material.module';
     CarouselComponent,
     ProfeDestacadoComponent,
     SliderComponent,
+    CardComponent
   ]
 })
 export class PageComponentsModule { }

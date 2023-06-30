@@ -15,29 +15,7 @@
       <div ngxSlickItem *ngFor="let slide of slides" class="slide ">
         <article class="mb-2">
           <!-- Articulos creados con Angular Material, Card-->
-          <mat-card>
-            <!-- Header del card, en este caso la imagen -->
-            <mat-card-header class="p-0 m-0">
-              <img class="img-fluid" src="{{slide.img}}">
-            </mat-card-header>
-
-            <!-- Contenido del card -->
-            <mat-card-content class="mt-2">
-              <!-- Título -->
-              <mat-card-title>
-                {{slide.cardTitle}}
-              </mat-card-title>
-              <!-- Subtítulo -->
-              <mat-card-subtitle>
-                {{slide.cardSubtitle}}
-              </mat-card-subtitle>
-            </mat-card-content>
-
-            <!-- Descripción del artículo -->
-            <mat-card-actions>
-              <p class="m-2">{{slide.cardDescription}}</p>
-            </mat-card-actions>
-          </mat-card>
+          <my-card [cardPC]="slide"/>
         </article>
       </div>
     </ngx-slick-carousel>
