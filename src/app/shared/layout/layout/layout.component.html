@@ -11,6 +11,7 @@
         <mat-icon>menu</mat-icon>
       </button>
     </mat-toolbar>
+    <!-- Comprobación de la ruta en la que me encuentro -->
     <div *ngIf="getRootUrl()!='auth'; else auth">
       <mat-nav-list >
         <mat-list-item *ngFor="let item of sidebarItems"
@@ -63,7 +64,20 @@
 
   </mat-toolbar>
 
+  <!-- Contenido de la ruta -->
   <router-outlet/>
 
-  <my-footer/>
+
+  <!-- Comprobación de la ruta para usar un footer fixed o no -->
+  <div *ngIf="getRootUrl()!='auth'; else authFooter">
+    <my-footer/>
+  </div>
+
+  <!-- Necesito que el footer quede pegado abajo siempre en la ruta "/auth" porque si no se queda en medio de la pantalla
+      Y si lo dejo siempre fixed se vería feo siempre visible en el resto de páginas
+  -->
+  <ng-template #authFooter>
+    <my-footer class="fixed-bottom"/>
+  </ng-template>
+
 </mat-sidenav-container>

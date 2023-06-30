@@ -12,30 +12,30 @@
     [config]="slideConfig"
     >
       <!-- Bucle para generar un artículo del carrusel por cada uno que tenga -->
-      <div ngxSlickItem *ngFor="let slide of slides" class="slide p-0 m-0">
+      <div ngxSlickItem *ngFor="let slide of slides" class="slide ">
         <article class="mb-2">
           <!-- Articulos creados con Angular Material, Card-->
           <mat-card>
             <!-- Header del card, en este caso la imagen -->
             <mat-card-header class="p-0 m-0">
-              <img class="img-fluid" src="https://us-tuna-sounds-images.voicemod.net/213ce138-31ef-4e02-997e-78a82528a457-1667761510799.png">
+              <img class="img-fluid" src="{{slide.img}}">
             </mat-card-header>
 
             <!-- Contenido del card -->
-            <mat-card-content>
+            <mat-card-content class="mt-2">
               <!-- Título -->
               <mat-card-title>
-                {{cardTitle}}
+                {{slide.cardTitle}}
               </mat-card-title>
               <!-- Subtítulo -->
               <mat-card-subtitle>
-                {{cardSubtitle}}
+                {{slide.cardSubtitle}}
               </mat-card-subtitle>
             </mat-card-content>
 
             <!-- Descripción del artículo -->
             <mat-card-actions>
-              <p>{{cardDescription}}</p>
+              <p class="m-2">{{slide.cardDescription}}</p>
             </mat-card-actions>
           </mat-card>
         </article>

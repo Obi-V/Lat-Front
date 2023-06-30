@@ -1,5 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import { SlickCarouselComponent } from 'ngx-slick-carousel';
+import { Slide } from 'src/app/interfaces/slice.interface';
 
 
 @Component({
@@ -9,22 +10,13 @@ import { SlickCarouselComponent } from 'ngx-slick-carousel';
 })
 export class SliderComponent {
 
-  title: string = 'Lo más buscado'
-
-  cardTitle: string = 'Profezor Tusmuerto'
-  cardSubtitle:string = 'Es un hijueputa marihuano'
-  cardDescription: string = `Dice que es casi doctor de medesina china, pero que no ha llevao los papele. Técnica secreta: Bum un Blast, nesesita un segundo Blast. Va veni Dios y va pega en la tierra, como nunca ante ha visto`
-
   @ViewChild('slickModal', { static: true }) slickModal?: SlickCarouselComponent;
 
-  slides = [
-    { img: '../assets/img/Profe1.png' },
-    { img: '../assets/img/Profe2.png' },
-    { img: '../assets/img/Profe3.png' },
-    { img: '../assets/img/Profe4.png' },
-    { img: '../assets/img/Profe5.png' },
-    { img: '../assets/img/Profe6.png' },
-  ]
+  @Input()
+  title:string = '';
+
+  @Input()
+  slides: Slide[] = [];
 
   slideConfig = {
     infinite: true,
