@@ -1,3 +1,5 @@
+
+<!-- En caso de que sea para el carrusel -->
 <mat-card *ngIf=" cardPC != undefined;">
   <!-- Header del card, en este caso la imagen -->
   <mat-card-header class="p-0 m-0">
@@ -22,6 +24,7 @@
   </mat-card-actions>
 </mat-card>
 
+<!-- En caso de que sea para la página "Categorías" -->
 <mat-card *ngIf=" cardCategoria != undefined;">
   <!-- Header del card -->
   <mat-card-header class="p-0 m-0">
@@ -31,8 +34,8 @@
   <!-- Contenido del card -->
   <mat-card-content class="mt-2">
     <!-- Título -->
-    <mat-card-title class="text-center">
-      {{cardCategoria.cardTitle}}
+    <mat-card-title class="text-center font-weight-bold">
+      <a href="#" class=" text-decoration-none lead primario mt-2">{{cardCategoria.cardTitle}}</a>
     </mat-card-title>
 
   </mat-card-content>

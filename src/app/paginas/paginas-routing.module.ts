@@ -7,6 +7,7 @@ import { CursoComponent } from './pages/curso/curso.component';
 import { PerfilProfesorComponent } from './pages/perfil-profesor/perfil-profesor.component';
 import { ProfesoresComponent } from './pages/profesores/profesores.component';
 import { AsistenciaComponent } from './pages/asistencia/asistencia.component';
+import { PerfilCategoriaComponent } from './pages/perfil-categoria/perfil-categoria.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,10 @@ const routes: Routes = [
       {
         path:'categorias',
         component:CategoriasComponent
+      },
+      {
+        path:'categorias/prueba',
+        component: PerfilCategoriaComponent
       },
       {
         path:'curso',
