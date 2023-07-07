@@ -1,31 +1,36 @@
 
 <!-- En caso de que sea para el carrusel -->
 <mat-card *ngIf=" cardPC != undefined;">
-  <!-- Header del card, en este caso la imagen -->
-  <mat-card-header class="p-0 m-0">
-    <img class="img-fluid" src="{{cardPC.img}}">
-  </mat-card-header>
+  <!-- Routerlink pinchando en cualquier parte del card -->
+  <a [routerLink]="['{{cardPC.link}}']" class="text-decoration-none primario card-link">
+    <!-- Header del card, en este caso la imagen -->
+    <mat-card-header class="p-0 m-0">
+      <img class="img-fluid" src="{{cardPC.img}}">
+    </mat-card-header>
+    <!-- Contenido del card -->
+    <mat-card-content class="mt-2">
+      <!-- Título -->
+      <mat-card-title class=" secundario">
+        {{cardPC.cardTitle}}
+      </mat-card-title>
+      <!-- Subtítulo -->
+      <mat-card-subtitle>
+        {{cardPC.cardSubtitle}}
+      </mat-card-subtitle>
+    </mat-card-content>
 
-  <!-- Contenido del card -->
-  <mat-card-content class="mt-2">
-    <!-- Título -->
-    <mat-card-title>
-      {{cardPC.cardTitle}}
-    </mat-card-title>
-    <!-- Subtítulo -->
-    <mat-card-subtitle>
-      {{cardPC.cardSubtitle}}
-    </mat-card-subtitle>
-  </mat-card-content>
-
-  <!-- Descripción del artículo -->
-  <mat-card-actions>
-    <p class="m-2">{{cardPC.cardDescription}}</p>
-  </mat-card-actions>
+    <!-- Descripción del artículo -->
+    <mat-card-actions>
+      <p class="m-2">{{cardPC.cardDescription}}</p>
+    </mat-card-actions>
+  </a>
 </mat-card>
 
 <!-- En caso de que sea para la página "Categorías" -->
+
 <mat-card *ngIf=" cardCategoria != undefined;">
+
+  <a [routerLink]="['/pages/categorias/prueba']" class="text-decoration-none card-link">
   <!-- Header del card -->
   <mat-card-header class="p-0 m-0">
     <img class="img-fluid" src="{{cardCategoria.img}}">
@@ -35,8 +40,10 @@
   <mat-card-content class="mt-2">
     <!-- Título -->
     <mat-card-title class="text-center font-weight-bold">
-      <a href="#" class=" text-decoration-none lead primario mt-2">{{cardCategoria.cardTitle}}</a>
+      <span class="lead primario mt-2">{{cardCategoria.cardTitle}}</span>
     </mat-card-title>
 
   </mat-card-content>
+  </a>
 </mat-card>
+

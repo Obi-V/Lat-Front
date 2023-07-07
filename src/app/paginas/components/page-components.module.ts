@@ -8,6 +8,8 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { MaterialModule } from 'src/app/material/material.module';
 import { CardComponent } from './card/card.component';
+import { RouterModule } from '@angular/router';
+import { ProfeDestacadoPerfilComponent } from './profe-destacado-perfil/profe-destacado-perfil.component';
 
 
 
@@ -17,18 +19,21 @@ import { CardComponent } from './card/card.component';
     ProfeDestacadoComponent,
     SliderComponent,
     CardComponent,
+    ProfeDestacadoPerfilComponent,
   ],
   imports: [
     CommonModule,
     SlickCarouselModule,
     SharedModule,
-    MaterialModule
+    MaterialModule,
+    RouterModule
   ],
   exports:[
     CarouselComponent,
     ProfeDestacadoComponent,
     SliderComponent,
-    CardComponent
+    CardComponent,
+    ProfeDestacadoPerfilComponent
   ]
 })
 export class PageComponentsModule { }

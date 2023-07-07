@@ -2,12 +2,11 @@ import { Component } from '@angular/core';
 import { profeDestacado } from 'src/app/interfaces/profeDestacado.interface';
 
 @Component({
-  selector: 'profe-destacado',
-  templateUrl: './profe-destacado.component.html',
-  styleUrls: ['./profe-destacado.component.css']
-}
-)
-export class ProfeDestacadoComponent {
+  selector: 'profe-destacado-perfil',
+  templateUrl: './profe-destacado-perfil.component.html',
+  styleUrls: ['./profe-destacado-perfil.component.css']
+})
+export class ProfeDestacadoPerfilComponent {
 
   profe: profeDestacado = {
     nombre: 'Antonio Jesús Lopez Gambero',

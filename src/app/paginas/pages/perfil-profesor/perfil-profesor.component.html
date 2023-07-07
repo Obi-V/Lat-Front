@@ -1,1 +1,53 @@
-<p>perfil-profesor works!</p>
+<h1 class="display-3 text-center m-3 secundario">{{profesor.name}}</h1>
+
+<mat-divider></mat-divider>
+
+
+<!-- Profesor promocionado -->
+<profe-destacado-perfil/>
+
+<section class="container-fluid border  mt-4 mb-4 pt-4">
+  <section class="d-flex col justify-content-around">
+      <section>
+          <p class="secundario"> <b>País de origen</b><br>
+              <span class="primario">España</span>
+          </p>
+          <p class="secundario"> <b>Habilidades</b><br>
+              <span class="primario">JavaScript,React,Angular</span>
+          </p>
+      </section>
+      <section>
+          <p class="secundario"> <b>Tiempo de respuesta</b><br>
+              <span class="primario">De 4 a 5 horas</span>
+          </p>
+
+          <p class="secundario"> <b>Idiomas</b><br>
+              <span class="primario">Español, Inglés</span>
+          </p>
+      </section>
+  </section>
+  <hr>
+  <p class="p-5">
+      Hola, mi nombre es Antonio Jesús , hace ya 10 años empecé en el mundo de la programación la cual ha sido mi
+      pasión a tiempo completo.<br><br>
+
+      Durante ese tiempo, tengo más de 200 proyectos completos. Ofrezco el paquete completo de creación de sitios
+      web, que incluye el diseño y desarrollo... con una sonrisa :)<br><br>
+
+      Soy Licenciado en ingeniería informática y tengo un máster de profesorado, ¡Lo que me convierte en tu
+      profesor ideal!<br>
+
+      Me encantan los diseños limpios y simples. ¡Menos es más! ¡No dudes en ponerte en contacto conmigo para
+      cualquier pregunta!
+  </p>
+  <hr>
+  <section class="row justify-content-around text-center">
+      <section class="col">
+        <!-- TODO: que los botones activen un modal -->
+          <custom-button [text]="'CONTACTO E-MAIL'" class="m-4"/>
+      </section>
+      <section class="col">
+        <custom-button [text]="'TELÉFONO'" class="m-4 "/>
+      </section>
+  </section>
+</section>

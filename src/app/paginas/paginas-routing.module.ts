@@ -31,7 +31,7 @@ const routes: Routes = [
         component:CursoComponent
       },
       {
-        path:'perfil-profesor',
+        path:'perfil-profesor/profeprueba',
         component:PerfilProfesorComponent
       },
       {
