@@ -12,6 +12,7 @@ import { SharedModule } from '../shared/shared.module';
 import { CategoriasComponent } from './pages/categorias/categorias.component';
 import { PerfilCategoriaComponent } from './pages/perfil-categoria/perfil-categoria.component';
 import { PerfilProfesorComponent } from './pages/perfil-profesor/perfil-profesor.component';
+import { NosotrosComponent } from './pages/nosotros/nosotros.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { PerfilProfesorComponent } from './pages/perfil-profesor/perfil-profesor
     MainPageComponent,
     CategoriasComponent,
     PerfilCategoriaComponent,
-    PerfilProfesorComponent
+    PerfilProfesorComponent,
+    NosotrosComponent
   ],
   imports: [
     CommonModule,

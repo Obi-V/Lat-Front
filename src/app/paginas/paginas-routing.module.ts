@@ -8,6 +8,7 @@ import { PerfilProfesorComponent } from './pages/perfil-profesor/perfil-profesor
 import { ProfesoresComponent } from './pages/profesores/profesores.component';
 import { AsistenciaComponent } from './pages/asistencia/asistencia.component';
 import { PerfilCategoriaComponent } from './pages/perfil-categoria/perfil-categoria.component';
+import { NosotrosComponent } from './pages/nosotros/nosotros.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,10 @@ const routes: Routes = [
       {
         path:'asistencia',
         component:AsistenciaComponent
+      },
+      {
+        path:'nosotros',
+        component:NosotrosComponent
       },
       {
         path:'**',

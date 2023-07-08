@@ -112,6 +112,5 @@ export class MainPageComponent {
       cardDescription: 'Breve descripción del curso de JavaScript para principiantes, el curso tiene un total de 30h lectivas.', img: '../assets/img/jslogo.png',
       link: '/pages/categorias/prueba'
     },
-
   ]
 }
