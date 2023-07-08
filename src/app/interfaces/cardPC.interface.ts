@@ -8,4 +8,7 @@ export interface CardPC {
   cardDescription: string ,
 
   img: string,
+
+  link: string,
+
 }

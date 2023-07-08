@@ -14,8 +14,20 @@
   gap:0
 }
 
-.enlaces>a{
+.enlaces{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.enlaces>a, i{
+  padding:5px;
   cursor: pointer;
   text-decoration: none;
   color: var(--primary);
+}
+
+.enlaces>a:hover, i:hover{
+  background-color: var(--primary);
+  color: var(--secondary);
+  transition: background-color 0.5s ease, color 0.3s ease;
 }

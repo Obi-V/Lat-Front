@@ -1,11 +1,5 @@
 <h1 class="display-3 text-center m-3 secundario">{{profesor.name}}</h1>
 
-<mat-divider></mat-divider>
-
-
-<!-- Profesor promocionado -->
-<profe-destacado-perfil/>
-
 <section class="container-fluid border  mt-4 mb-4 pt-4">
   <section class="d-flex col justify-content-around">
       <section>
@@ -50,4 +44,12 @@
         <custom-button [text]="'TELÉFONO'" class="m-4 "/>
       </section>
   </section>
+
 </section>
+
+  <!-- Profesor Slide -->
+  <profe-destacado-perfil/>
+
+  <section class="container">
+    <slider [slides]="loMasVendido" [title]=" 'Sus cursos' "/>
+  </section>
