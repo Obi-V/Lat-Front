@@ -41,7 +41,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     ReactiveFormsModule,
     MatCheckboxModule,
     MatRadioModule,
-    MatPaginatorModule
+    MatPaginatorModule,
   ]
 })
 export class MaterialModule { }
