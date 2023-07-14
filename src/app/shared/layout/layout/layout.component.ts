@@ -20,7 +20,7 @@ export class LayoutComponent {
   public sidebarItems = [
     { label: 'Principal', icon: 'assignment', url:'./principal'},
     { label: 'Categorias', icon: 'swipe_vertical', url:'./categorias'},
-    { label: 'Profesores', icon: 'co_present', url:'./profesores'},
+    { label: 'Nosotros', icon: 'co_present', url:'./nosotros'},
     { label: 'Asistencia', icon: 'support_agent', url:'./asistencia'}
   ]
 
