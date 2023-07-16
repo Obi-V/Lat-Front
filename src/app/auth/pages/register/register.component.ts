@@ -1,7 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
 import { LatService } from 'src/app/shared/lat.service';
-import { Usuario } from '../../interfaces/usuario.interface';
 
 @Component({
   selector: 'app-register',
@@ -72,7 +71,7 @@ export class RegisterComponent {
 
   crear() {
     if (this.myForm.valid){
-      console.log(this.myForm.value)
+
       const { password2, ...nuevoUsuario} = this.myForm.value
 
       this.latService.register(nuevoUsuario).subscribe()

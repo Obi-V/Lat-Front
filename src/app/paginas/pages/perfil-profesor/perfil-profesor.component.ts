@@ -1,20 +1,44 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { CardPC } from 'src/app/interfaces/cardPC.interface';
-import { Profesor } from '../../../interfaces/profesores.interface';
+import { Usuario } from 'src/app/interfaces/usuario.interface';
+import { LatService } from 'src/app/shared/lat.service';
 
 @Component({
   selector: 'app-perfil-profesor',
   templateUrl: './perfil-profesor.component.html',
   styleUrls: ['./perfil-profesor.component.css']
 })
-export class PerfilProfesorComponent {
+export class PerfilProfesorComponent implements OnInit {
 
-  profesor =  { name: 'Antonio Ezús Lopez Gambero', img: '../assets/img/Front end.png'}
+  constructor(
+    private router: Router,
+    private latService: LatService
+  ) {}
+
+  ngOnInit(): void {
+    const currentUrl = this.router.url;
+    const urlSegments = currentUrl.split('/');
+    const nombre = urlSegments[urlSegments.length - 1];
+    this.getProfesor(nombre);
+  }
+
+  getProfesor(nombre:string){
+    this.latService.oneProfe(nombre).subscribe(
+      (profesor:Usuario)=>{
+        this.profesor = profesor
+        console.log(profesor)
+      }
+    )
+  }
+
+  profesor?: Usuario
+
 
   loMasVendido: CardPC[] = [
     {
       cardTitle: 'Curso de Java y spring Boot 25h', cardSubtitle: 'Armando Redes',
-      cardDescription: 'Breve descripción del curso de java y spring boot 25h, lo de 25h no se lo cree nadie.', img: '../assets/img/springlogo.png',
+      cardDescription: 'Breve descripción del curso de java y spring boot 25h, lo de 25h no se lo cree nadie.', img: '../assets/img/Java.png',
       link: '/pages/categorias/prueba'
     },
 

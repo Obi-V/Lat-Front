@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { profeDestacado } from 'src/app/interfaces/profeDestacado.interface';
+import { Usuario } from 'src/app/interfaces/usuario.interface';
 
 @Component({
   selector: 'profe-destacado',
@@ -8,6 +9,9 @@ import { profeDestacado } from 'src/app/interfaces/profeDestacado.interface';
 }
 )
 export class ProfeDestacadoComponent {
+
+  /* TODO */
+  profesor!:Usuario
 
   profe: profeDestacado = {
     nombre: 'Antonio Jesús Lopez Gambero',

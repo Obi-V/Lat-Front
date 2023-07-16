@@ -3,8 +3,8 @@
 <mat-card *ngIf=" cardPC != undefined;">
 
     <!-- Header del card, en este caso la imagen -->
-    <mat-card-header class="p-0 m-0">
-      <img class="img-fluid" src="{{cardPC.img}}">
+    <mat-card-header class="p-0 m-0 justify-content-center">
+      <img class="img-fluid img-carrusel" src="{{cardPC.img}}">
     </mat-card-header>
 
     <!-- Routerlink pinchando en cualquier parte del card -->
@@ -14,7 +14,7 @@
       <mat-card-content class="mt-2">
 
         <!-- Título -->
-        <mat-card-title class=" secundario">
+        <mat-card-title class="secundario">
           {{cardPC.cardTitle}}
         </mat-card-title>
 
@@ -37,7 +37,7 @@
 
   <a routerLink="{{cardCategoria.link}}" class="text-decoration-none card-link">
   <!-- Header del card -->
-  <mat-card-header class="p-0 m-0">
+  <mat-card-header class="p-0 m-0 justify-content-center">
     <img class="img-fluid" src="{{cardCategoria.img}}">
   </mat-card-header>
 

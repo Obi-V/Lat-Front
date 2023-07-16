@@ -1,11 +1,10 @@
+import { Video } from "./video.interface";
 
 export interface Curso {
 
-  cardTitle: string
-
-  cardSubtitle:string ,
-
-  cardDescription: string ,
-
-  img: string,
+  nombre:          string;
+  subtitulo:       string;
+  description:     string;
+  img:             string;
+  videos:          Video[];
 }

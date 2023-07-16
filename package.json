@@ -23,6 +23,7 @@
     "@coreui/angular": "^4.5.2",
     "@coreui/coreui": "^4.2.6",
     "@coreui/icons-angular": "^4.5.2",
+    "bcryptjs": "^2.4.3",
     "jquery": "^3.7.0",
     "ngx-slick-carousel": "^15.0.0",
     "primeflex": "^3.3.1",
