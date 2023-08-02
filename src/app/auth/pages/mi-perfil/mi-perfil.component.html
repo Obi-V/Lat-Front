@@ -1,0 +1,82 @@
+<div class="d-grid align-items-center justify-content-center mt-5">
+  <div class="mb-3">
+      <h4
+          class="text-lg text-center"
+          color="primary"
+      >
+          Modificar Mi Perfil
+      </h4>
+  </div>
+  <form
+      [formGroup]="myForm"
+      (ngSubmit)="crear()"
+      class="d-grid"
+  >
+
+      <span *ngIf="isValidField('nombre')" class="text-danger">{{ getFieldError('nombre') }}</span>
+      <mat-form-field>
+          <mat-label>Nombre de usuario</mat-label>
+          <input
+              type="text"
+              matInput
+              formControlName="nombre"
+          >
+      </mat-form-field>
+
+      <span *ngIf="isValidField('password')" class="text-danger">{{ getFieldError('password') }}</span>
+      <mat-form-field>
+          <mat-label>Contraseña</mat-label>
+          <input
+              type="password"
+              matInput
+              formControlName="password"
+          >
+      </mat-form-field>
+
+      <span *ngIf="isValidField('password2')" class="text-danger">{{ getFieldError('password2') }}</span>
+      <mat-form-field>
+          <mat-label>Confirmar contraseña</mat-label>
+          <input
+              type="password"
+              matInput
+              formControlName="password2"
+          >
+      </mat-form-field>
+
+      <span *ngIf="isValidField('rol')" class="text-danger">{{ getFieldError('rol') }}</span>
+      <mat-form-field>
+          <mat-label>¿Qué quieres ser?</mat-label>
+          <mat-select formControlName="rol">
+              <mat-option
+                  *ngFor="let rol of roles"
+                  [value]="rol"
+              >
+                  {{rol}}
+              </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+      <button
+          mat-button
+          mat-flat-button
+          color="primary"
+          class="mb-1"
+      >
+          ingresar
+      </button>
+
+  </form>
+  <div class="text-center mb-2 mt-2">
+    <a href="./auth/login">¿Ya tienes cuenta?</a>
+  </div>
+
+  <mat-divider></mat-divider>
+  <div class="d-flex justify-content-center">
+      <a><i class=" h2 p-1 fa-brands fa-square-facebook"></i></a>
+      <a><i class=" h2 p-1 fa-brands fa-square-twitter"></i></a>
+      <a><i class=" h2 p-1 fa-brands fa-square-instagram"></i></a>
+      <a><i class=" h2 p-1 fa-brands fa-square-google-plus"></i></a>
+      <a><i class="h2 p-1 fa-brands fa-brands fa-github"></i></a>
+  </div>
+</div>
+

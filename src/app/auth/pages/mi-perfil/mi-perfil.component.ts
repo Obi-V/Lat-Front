@@ -1,28 +1,27 @@
 import { Component, inject } from '@angular/core';
 import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
-import Swal from 'sweetalert2'
-import { AuthService } from '../../auth.service';
 import { Router } from '@angular/router';
+import { LatService } from 'src/app/shared/lat.service';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: 'app-mi-perfil',
+  templateUrl: './mi-perfil.component.html',
+  styleUrls: ['./mi-perfil.component.css']
 })
-export class RegisterComponent {
+export class MiPerfilComponent {
 
-  public fb          = inject(FormBuilder)
-  public authService = inject(AuthService)
-  private router     = inject(Router)
+  public fb = inject(FormBuilder)
+  public latService = inject(LatService)
+  public router = inject(Router)
 
   public roles: string[] = ['Alumno', 'Profesor']
 
   public myForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
-    username: ['', [Validators.required, Validators.minLength(5)]],
+    nombre: ['', [Validators.required, Validators.minLength(5)]],
     password: ['', [Validators.required, Validators.minLength(6)]],
     password2: ['', [Validators.required]],
-    role: ['', [Validators.required]],
+    rol: ['', [Validators.required]],
   },
     {
       validator: this.checkPasswords
@@ -72,16 +71,16 @@ export class RegisterComponent {
     return null
   }
 
-  register() {
-    if (this.myForm.valid) {
+  crear() {
+    if (this.myForm.valid){
 
-      const { password2, ...nuevoUsuario } = this.myForm.value
+      const { password2, ...nuevoUsuario} = this.myForm.value
+      // TODO hay que hacer un put o patch
+      //this.latService.register(nuevoUsuario).subscribe()
 
-      this.authService.register(nuevoUsuario).subscribe({
-        next: ()=> this.router.navigateByUrl('/pages'),
-        error: (message) => { Swal.fire('Error', message, 'error') }
-      })
+      this.router.navigate(['/auth/login'])
     }
     this.myForm.markAllAsTouched()
   }
+
 }

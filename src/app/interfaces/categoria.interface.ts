@@ -1,15 +1,11 @@
 import { Curso } from "./curso.interface";
-import { Profesor } from "./profesor.interface";
+import { Usuario } from "./usuario.interface";
 
 export interface Categoria {
 
   name : string,
-
-  cardDescription: string ,
-
+  description: string,
   img: string,
-
   cursos: Curso [],
-
-  profesores: Profesor [],
+  profesores: Usuario [],
 }

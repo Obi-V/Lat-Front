@@ -9,7 +9,7 @@
     </div>
     <form
         [formGroup]="myForm"
-        (ngSubmit)="crear()"
+        (ngSubmit)="register()"
         class="d-grid"
     >
         <span *ngIf="isValidField('email')" class="text-danger">{{ getFieldError('email') }}</span>
@@ -22,13 +22,13 @@
             >
         </mat-form-field>
 
-        <span *ngIf="isValidField('nombre')" class="text-danger">{{ getFieldError('nombre') }}</span>
+        <span *ngIf="isValidField('username')" class="text-danger">{{ getFieldError('username') }}</span>
         <mat-form-field>
             <mat-label>Nombre de usuario</mat-label>
             <input
                 type="text"
                 matInput
-                formControlName="nombre"
+                formControlName="username"
             >
         </mat-form-field>
 
@@ -52,15 +52,15 @@
             >
         </mat-form-field>
 
-        <span *ngIf="isValidField('rol')" class="text-danger">{{ getFieldError('rol') }}</span>
+        <span *ngIf="isValidField('role')" class="text-danger">{{ getFieldError('role') }}</span>
         <mat-form-field>
             <mat-label>¿Qué quieres ser?</mat-label>
-            <mat-select formControlName="rol">
+            <mat-select formControlName="role">
                 <mat-option
-                    *ngFor="let rol of roles"
-                    [value]="rol"
+                    *ngFor="let role of roles"
+                    [value]="role"
                 >
-                    {{rol}}
+                    {{role}}
                 </mat-option>
             </mat-select>
         </mat-form-field>

@@ -5,6 +5,6 @@ export interface cardCategoria {
 
   img: string,
 
-  link: string,
+  url: string,
 
 }

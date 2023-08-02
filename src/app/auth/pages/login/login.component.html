@@ -9,14 +9,15 @@
         </div>
         <form
         [formGroup]="myForm"
-        (ngSubmit)="submit()"
+        (ngSubmit)="login()"
         class="d-grid"
     >
         <mat-form-field>
-            <mat-label>Usuario</mat-label>
+            <mat-label>Username</mat-label>
             <input
                 type="text"
                 matInput
+                formControlName="username"
             >
         </mat-form-field>
 
@@ -25,6 +26,7 @@
             <input
                 type="password"
                 matInput
+                formControlName="password"
             >
         </mat-form-field>
         <button class="btn btn-outline-primary">ingresar</button>
