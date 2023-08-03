@@ -1,1 +1,17 @@
-<h1> ERROR 404 PAGE NOT FOUND</h1>
+<section
+    class="bg-image pt-5"
+    style="background-image:url('../assets/img/Fondo404.png');background-size: cover; background-position: center; height: 100vh;"
+>
+    <h1 class="text-center secundario display-1 pt-5 ">Error 404</h1>
+    <div
+        class="text-center"
+        style="margin-top:65vh"
+    >
+        <h2 class="text-center secundario ">
+            Parece que estás perdido, ¿quieres volver a la página principal?
+        </h2>
+        <section class="container-fluid mt-3 primario text-center">
+          <custom-button [routerLink]="'/pages/principal'" [text]="'Volver a principal'"/>
+        </section>
+    </div>
+</section>

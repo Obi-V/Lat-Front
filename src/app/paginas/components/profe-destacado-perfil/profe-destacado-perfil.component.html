@@ -5,17 +5,17 @@
     <section class="container-fluid">
         <section class="row p-3 pl-5 bg-white m-5 border border-warning position-relative">
             <section class="col-md">
-                <h1 class=" display-4 mt-3 font-weight-bold secundario">Tu profesor favorito</h1>
+                <h1 class=" display-4 mt-3 font-weight-bold secundario">{{profesor.subtitulo ? profesor.subtitulo : 'El profesor todavía no ha actualizado su perfil'}}</h1>
                 <p class="mt-md-5 mb-md-5 medium-font-size primario">
-                    <b>{{profe.nombre}}</b>,
-                    {{profe.descripcion}}
+                    <b>{{profesor.username}}</b>,
+                    {{profesor.descripcion ? profesor.descripcion : 'El profesor todavía no ha actualizado su perfil'}}
                 </p>
                 <img src="../assets/img/Estrellas.png" class="m-4" style="width:50%">
             </section>
             <section class="col-md-3">
                 <img
                     class="img-fluid mt-2"
-                    src="{{profe.imagen}}"
+                    src="{{profesor.img}}"
                 >
             </section>
         </section>

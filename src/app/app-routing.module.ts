@@ -13,7 +13,7 @@ const routes: Routes = [
   },
   {
     path: 'pages',
-    canActivate: [isAuthenticatedGuard],
+    //canActivate: [isAuthenticatedGuard],
     loadChildren: () => import('./paginas/paginas.module').then(m => m.PaginasModule)
   },
   {

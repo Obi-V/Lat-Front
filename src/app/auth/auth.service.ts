@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, computed, inject, signal } from '@angular/core';
 import { Observable, catchError, map, of, tap, throwError } from 'rxjs';
 import { AuthStatus, CheckTokenResponse, LoginResponse, RegisterResponse, Usuario } from '../interfaces/';
+import { Router } from '@angular/router';
 
 
 
@@ -16,6 +17,7 @@ export class AuthService {
 
   private readonly baseUrl: string = 'http://localhost:8080/auth'
   private http = inject(HttpClient)
+  private router = inject(Router)
 
   private _currentUser = signal<Usuario | null>(null)
   private _authStatus = signal<AuthStatus>(AuthStatus.checking)
@@ -79,12 +81,23 @@ export class AuthService {
       )
   }
 
-  private setAuthentication(usuario: Usuario, token: string): boolean {
+  setAuthentication(usuario: Usuario, token: string): boolean {
     this._currentUser.set(usuario)
     this._authStatus.set(AuthStatus.authenticated)
     localStorage.setItem('token', token)
 
     return true
+  }
+
+  logout() {
+    // Para hacer logout quitamos el token y reseteamos el usuario y el status
+    localStorage.removeItem('token')
+    this._currentUser.set(null)
+    this._authStatus.set(AuthStatus.notAuthenticated)
+
+    /* Recargamos la página para que nos saque en caso de necesitar estar autenticados
+       Yo lo hice con "router" de angular pero se puede hacer más facil con javascript: window.location.reload()*/
+    this.router.navigateByUrl(this.router.url);
   }
 }
 

@@ -12,6 +12,8 @@ import { LatService } from 'src/app/shared/lat.service';
 })
 export class PerfilProfesorComponent implements OnInit {
 
+  public profesor!: Usuario
+
   constructor(
     private router: Router,
     private latService: LatService
@@ -33,7 +35,6 @@ export class PerfilProfesorComponent implements OnInit {
     )
   }
 
-  profesor?: Usuario
 
   loMasVendido: CardPC[] = [
     {

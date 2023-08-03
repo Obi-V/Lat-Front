@@ -1,6 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/auth/auth.service';
+import { AuthStatus } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-layout',
@@ -10,6 +12,7 @@ import { Router } from '@angular/router';
 export class LayoutComponent {
 
   private router = inject( Router )
+  private authService = inject( AuthService )
 
   imagePath: SafeResourceUrl;
 
@@ -33,5 +36,16 @@ export class LayoutComponent {
     const currentUrl = this.router.url;
     const parts = currentUrl.split('/');
     return parts[1];
+  }
+
+  authenticated(): boolean{
+    if (this.authService.authStatus() === AuthStatus.authenticated) return true;
+
+    return false
+  }
+
+  logout(){
+    this.authService.logout()
+
   }
 }

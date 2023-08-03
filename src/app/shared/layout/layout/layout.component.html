@@ -55,12 +55,23 @@
       </a>
   </section>
 
-  <!-- Iconos, login, carrito, etc-->
+  <!-- Iconos de la barra -->
     <div class="col text-end">
-
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-      <mat-icon>shopping_cart</mat-icon>
-    </button>
+      <!-- Si está autenticado: logout, carrito -->
+      <div *ngIf="authenticated()">
+        <button mat-icon-button>
+          <mat-icon>shopping_cart</mat-icon>
+        </button>
+        <button (click)="logout()" mat-icon-button>
+          <mat-icon>logout</mat-icon>
+        </button>
+      </div>
+      <!-- Si está autenticado: login -->
+      <div *ngIf="!authenticated()">
+        <button [routerLink]="['/auth/login']" mat-icon-button>
+          <mat-icon>login</mat-icon>
+        </button>
+      </div>
     </div>
 
   </mat-toolbar>
