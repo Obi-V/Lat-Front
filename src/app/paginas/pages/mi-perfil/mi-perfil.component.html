@@ -1,0 +1,137 @@
+<h1 class="display-3 text-center m-3 secundario mb-5">
+    Mi perfil de {{usuario!.role | titlecase}}
+</h1>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <h3 class="display-5 text-center m-3 secundario mb-3">Imagen de perfil</h3>
+            <div class="d-flex justify-content-center">
+                <img
+                    *ngIf="usuario?.img != null"
+                    class="img-fluid"
+                    src="{{usuario!.img}}"
+                >
+                <img
+                    *ngIf="usuario?.img == ''|| usuario?.img ==null"
+                    class="img-fluid"
+                    src="../assets/img/sin-perfil.jpg"
+                >
+            </div>
+        </div>
+        <div class="col-md-6 mt-4">
+            <form
+                [formGroup]="myForm"
+                (ngSubmit)="update()"
+                class="d-grid"
+            >
+                <!-- Username -->
+                <mat-form-field>
+                    <mat-label>Username</mat-label>
+                    <input
+                        type="text"
+                        matInput
+                        formControlName="username"
+                        [readonly]="true"
+                    >
+                </mat-form-field>
+
+                <!-- Email -->
+                <mat-form-field>
+                    <mat-label>Email</mat-label>
+                    <input
+                        type="text"
+                        matInput
+                        formControlName="email"
+                        [readonly]="true"
+                    >
+                </mat-form-field>
+
+                <!-- Role -->
+                <mat-form-field>
+                    <mat-label>Role</mat-label>
+                    <input
+                        type="text"
+                        matInput
+                        formControlName="role"
+                        [readonly]="true"
+                    >
+                </mat-form-field>
+
+                <!-- A partir de aquí ya se puede cambiar -->
+
+                <!-- País -->
+                <mat-form-field>
+                    <mat-label>País</mat-label>
+                    <input
+                        type="text"
+                        matInput
+                        formControlName="pais"
+                    >
+                </mat-form-field>
+
+                <!-- Respuesta -->
+                <mat-form-field>
+                    <mat-label>Respuesta</mat-label>
+                    <input
+                        type="text"
+                        matInput
+                        formControlName="respuesta"
+                    >
+                </mat-form-field>
+
+                <!-- Descripcion -->
+                <mat-form-field>
+                    <mat-label>Descripcion</mat-label>
+                    <textarea
+                        type="text"
+                        matInput
+                        formControlName="descripcion"
+                    ></textarea>
+                </mat-form-field>
+
+                <!-- Subtitulo -->
+                <mat-form-field>
+                    <mat-label>Subtitulo</mat-label>
+                    <textarea
+                        type="text"
+                        matInput
+                        formControlName="subtitulo"
+                    >
+                    </textarea>
+                </mat-form-field>
+
+                <!-- habilidades -->
+                <mat-form-field>
+                    <mat-label>Habilidades</mat-label>
+                    <input
+                        type="text"
+                        matInput
+                        formControlName="habilidades"
+                    >
+                </mat-form-field>
+
+                <!-- Idiomas -->
+                <mat-form-field>
+                    <mat-label>Idiomas</mat-label>
+                    <input
+                        type="text"
+                        matInput
+                        formControlName="idiomas"
+                    >
+                </mat-form-field>
+
+                <!-- Imagen -->
+                <mat-form-field>
+                    <mat-label>Imagen</mat-label>
+                    <input
+                        type="text"
+                        matInput
+                        formControlName="img"
+                    >
+                </mat-form-field>
+                <button class="btn btn-outline-primary">Actualizar</button>
+            </form>
+        </div>
+    </div>
+</div>

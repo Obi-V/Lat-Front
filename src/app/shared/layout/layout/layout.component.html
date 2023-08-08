@@ -3,7 +3,7 @@
   <!-- SideNav Desplegable-->
   <mat-sidenav #sidenav mode="push" [ngStyle]="{ width:'250px'}">
 
-    <!-- Desplegable si está logueado -->
+    <!-- Desplegable si está en la ruta pages -->
     <mat-toolbar color="accent">
       <span>Menú</span>
       <span class="spacer"></span>
@@ -21,10 +21,23 @@
         <mat-icon matListItemIcon>{{item.icon}}</mat-icon>
         {{item.label}}
         </mat-list-item>
+
+        <!-- Si el usuario tiene la cuenta logueada -->
+        <div *ngIf="authenticated()">
+          <mat-divider/>
+          <mat-list-item
+          [routerLink]="cuentaLink.url"
+          (click)="sidenav.toggle()"
+          >
+          <mat-icon matListItemIcon>{{cuentaLink.icon}}</mat-icon>
+          {{cuentaLink.label}}
+          </mat-list-item>
+        </div>
       </mat-nav-list>
+
     </div>
 
-    <!-- Desplegable si no está logueado -->
+    <!-- Desplegable si está en la ruta auth -->
     <ng-template #auth>
       <mat-nav-list >
         <mat-list-item *ngFor="let item of noLogeado"
@@ -50,27 +63,30 @@
 
       <!-- Columna del título y logo-->
     <section class="title row-md d-flex text-center">
-      <a routerLink="['/pages']">
+      <a routerLink="/pages">
         <img [src]="imagePath" style="height:55px;">
       </a>
   </section>
 
   <!-- Iconos de la barra -->
     <div class="col text-end">
-      <!-- Si está autenticado: logout, carrito -->
-      <div *ngIf="authenticated()">
-        <button mat-icon-button>
-          <mat-icon>shopping_cart</mat-icon>
-        </button>
-        <button (click)="logout()" mat-icon-button>
-          <mat-icon>logout</mat-icon>
-        </button>
-      </div>
-      <!-- Si está autenticado: login -->
-      <div *ngIf="!authenticated()">
-        <button [routerLink]="['/auth/login']" mat-icon-button>
-          <mat-icon>login</mat-icon>
-        </button>
+      <!-- Compruebo que no esté en la ruta auth -->
+      <div *ngIf="getRootUrl()!='auth';">
+        <!-- Si está autenticado: logout, carrito -->
+        <div *ngIf="authenticated()">
+          <button mat-icon-button>
+            <mat-icon>shopping_cart</mat-icon>
+          </button>
+          <button (click)="logout()" mat-icon-button>
+            <mat-icon>logout</mat-icon>
+          </button>
+        </div>
+        <!-- Si no está autenticado: login -->
+        <div *ngIf="!authenticated()">
+          <button [routerLink]="['/auth/login']" mat-icon-button>
+            <mat-icon>login</mat-icon>
+          </button>
+        </div>
       </div>
     </div>
 

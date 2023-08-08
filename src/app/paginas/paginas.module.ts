@@ -13,6 +13,7 @@ import { PerfilCategoriaComponent } from './pages/perfil-categoria/perfil-catego
 import { PerfilProfesorComponent } from './pages/perfil-profesor/perfil-profesor.component';
 import { ProfesoresComponent } from './pages/profesores/profesores.component';
 import { SharedModule } from '../shared/shared.module';
+import { MiPerfilComponent } from './pages/mi-perfil/mi-perfil.component';
 
 
 
@@ -25,6 +26,7 @@ import { SharedModule } from '../shared/shared.module';
     PerfilCategoriaComponent,
     PerfilProfesorComponent,
     NosotrosComponent,
+    MiPerfilComponent
   ],
   imports: [
     CommonModule,

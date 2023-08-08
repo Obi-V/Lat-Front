@@ -1,13 +1,13 @@
-    <div class="d-grid align-items-center justify-content-center mt-5">
-        <div class="mb-3">
-            <h2
-                class="text-lg text-center"
-                color="primary"
-            >
-                Login
-            </h2>
-        </div>
-        <form
+<div class="d-grid align-items-center justify-content-center mt-5">
+    <div class="mb-3">
+        <h2
+            class="text-lg text-center"
+            color="primary"
+        >
+            Login
+        </h2>
+    </div>
+    <form
         [formGroup]="myForm"
         (ngSubmit)="login()"
         class="d-grid"
@@ -21,6 +21,7 @@
             >
         </mat-form-field>
 
+
         <mat-form-field>
             <mat-label>Contraseña</mat-label>
             <input
@@ -30,18 +31,28 @@
             >
         </mat-form-field>
         <button class="btn btn-outline-primary">ingresar</button>
-        </form>
-        <div class="text-center mb-2 mt-2">
-          <a href="./auth/register">¿No tienes cuenta?</a>
-        </div>
-
-        <mat-divider></mat-divider>
-        <div class="d-flex justify-content-center">
-            <a><i class=" h2 p-1 fa-brands fa-square-facebook"></i></a>
-            <a><i class=" h2 p-1 fa-brands fa-square-twitter"></i></a>
-            <a><i class=" h2 p-1 fa-brands fa-square-instagram"></i></a>
-            <a><i class=" h2 p-1 fa-brands fa-square-google-plus"></i></a>
-            <a><i class="h2 p-1 fa-brands fa-brands fa-github"></i></a>
-        </div>
+    </form>
+    <div class="text-center mb-2 mt-2">
+        <a href="./auth/register">¿No tienes cuenta?</a>
     </div>
 
+
+    <mat-divider></mat-divider>
+    <div class="d-flex justify-content-center">
+        <a>
+            <i class=" h2 p-1 fa-brands fa-square-facebook"></i>
+        </a>
+        <a>
+            <i class=" h2 p-1 fa-brands fa-square-twitter"></i>
+        </a>
+        <a>
+            <i class=" h2 p-1 fa-brands fa-square-instagram"></i>
+        </a>
+        <a>
+            <i class=" h2 p-1 fa-brands fa-square-google-plus"></i>
+        </a>
+        <a>
+            <i class="h2 p-1 fa-brands fa-brands fa-github"></i>
+        </a>
+    </div>
+</div>

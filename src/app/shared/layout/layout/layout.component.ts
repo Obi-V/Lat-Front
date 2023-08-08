@@ -11,8 +11,8 @@ import { AuthStatus } from 'src/app/interfaces';
 })
 export class LayoutComponent {
 
-  private router = inject( Router )
-  private authService = inject( AuthService )
+  private router = inject(Router)
+  private authService = inject(AuthService)
 
   imagePath: SafeResourceUrl;
 
@@ -21,31 +21,32 @@ export class LayoutComponent {
   }
 
   public sidebarItems = [
-    { label: 'Principal', icon: 'assignment', url:'./principal'},
-    { label: 'Categorias', icon: 'swipe_vertical', url:'./categorias'},
-    { label: 'Nosotros', icon: 'co_present', url:'./nosotros'},
-    { label: 'Asistencia', icon: 'support_agent', url:'./asistencia'}
+    { label: 'Principal', icon: 'assignment', url: './principal' },
+    { label: 'Categorias', icon: 'swipe_vertical', url: './categorias' },
+    { label: 'Nosotros', icon: 'co_present', url: './nosotros' },
+    { label: 'Asistencia', icon: 'support_agent', url: './asistencia' },
   ]
 
   public noLogeado = [
-    { label: 'Login', icon: 'login', url:'./login'},
-    { label: 'Registrarse', icon: 'assignment_ind', url:'./register'},
+    { label: 'Login', icon: 'login', url: './login' },
+    { label: 'Registrarse', icon: 'assignment_ind', url: './register' },
   ]
 
-  getRootUrl() :string {
+  public cuentaLink = { label: 'Mi perfil', icon: 'account_circle', url: './mi-perfil' }
+
+  getRootUrl(): string {
     const currentUrl = this.router.url;
     const parts = currentUrl.split('/');
     return parts[1];
   }
 
-  authenticated(): boolean{
+  authenticated(): boolean {
     if (this.authService.authStatus() === AuthStatus.authenticated) return true;
 
     return false
   }
 
-  logout(){
+  logout() {
     this.authService.logout()
-
   }
 }

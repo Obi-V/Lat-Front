@@ -1,8 +1,7 @@
-import { NgModule, Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { Error404Component } from './shared/pages/error404/error404.component';
-import { PaginasRoutingModule } from './paginas/paginas-routing.module';
-import { isAuthenticatedGuard } from './guards/is-authenticated.guard';
+
 import { isNotAuthenticatedGuard } from './guards/is-not-authenticated.guard';
 
 const routes: Routes = [

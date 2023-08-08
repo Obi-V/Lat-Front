@@ -3,6 +3,8 @@ import { Injectable, computed, inject, signal } from '@angular/core';
 import { Observable, catchError, map, of, tap, throwError } from 'rxjs';
 import { AuthStatus, CheckTokenResponse, LoginResponse, RegisterResponse, Usuario } from '../interfaces/';
 import { Router } from '@angular/router';
+import { UpdateResponse } from '../interfaces/update-response.interface';
+import { UsuarioUpdate } from '../interfaces/usuarioUpdate.interface';
 
 
 
@@ -38,7 +40,7 @@ export class AuthService {
       map(({ usuario, token }) => this.setAuthentication(usuario, token)),
       catchError(err => {
         console.error('Error al iniciar sesión:', err);
-        return throwError(() => 'Error al iniciar sesión. Por favor, verifica tus credenciales e intentalo   de nuevo.');
+        return throwError(() => 'Error al iniciar sesión. Por favor, verifica tus credenciales e intentalo de nuevo.');
       })
     );
   }
@@ -99,5 +101,24 @@ export class AuthService {
        Yo lo hice con "router" de angular pero se puede hacer más facil con javascript: window.location.reload()*/
     this.router.navigateByUrl(this.router.url);
   }
+
+  updateUser(nuevoUsuario: UsuarioUpdate, jwt: string) {
+    const url = 'http://localhost:8080/lat/usuario/' + this._currentUser()?.id
+
+    // Hace falta el JWT porque la ruta filtra por Authority o Rol
+    const headers = {
+      'Authorization': 'Bearer ' + jwt
+    };
+
+    const body = nuevoUsuario
+
+    return this.http.put<UpdateResponse>(url, body, {headers}).pipe(
+      tap(() =>  this.router.navigateByUrl(this.router.url)),
+      catchError(err => {
+        console.error('Error al actualizar usuario:', err);
+        return throwError(() => 'Error al actualizar usuario. Por favor, verifica tus credenciales e intentalo de nuevo.');
+      }))
+  }
+
 }
 

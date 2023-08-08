@@ -6,16 +6,12 @@ import { LoginComponent } from './pages/login/login.component';
 import { AuthRoutingModule } from './auth-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
-import { MiPerfilComponent } from './pages/mi-perfil/mi-perfil.component';
-
-
 
 
 @NgModule({
   declarations: [
     LoginComponent,
     RegisterComponent,
-    MiPerfilComponent
   ],
   imports: [
     CommonModule,
@@ -28,7 +24,6 @@ import { MiPerfilComponent } from './pages/mi-perfil/mi-perfil.component';
   exports:[
     LoginComponent,
     RegisterComponent,
-    MiPerfilComponent
   ]
 })
 export class AuthModule { }
