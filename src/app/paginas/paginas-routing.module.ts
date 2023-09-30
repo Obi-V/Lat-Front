@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from '../shared/layout/layout/layout.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { CategoriasComponent } from './pages/categorias/categorias.component';
-import { CursoComponent } from './pages/curso/curso.component';
+import { DirectoComponent } from './pages/directo/directo.component';
 import { PerfilProfesorComponent } from './pages/perfil-profesor/perfil-profesor.component';
 import { ProfesoresComponent } from './pages/profesores/profesores.component';
 import { AsistenciaComponent } from './pages/asistencia/asistencia.component';
@@ -30,8 +30,8 @@ const routes: Routes = [
         component: PerfilCategoriaComponent
       },
       {
-        path:'curso',
-        component:CursoComponent
+        path:'directo',
+        component:DirectoComponent
       },
       {
         path:'perfil-profesor/profeprueba',

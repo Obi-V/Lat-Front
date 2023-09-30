@@ -14,6 +14,8 @@ import { PerfilProfesorComponent } from './pages/perfil-profesor/perfil-profesor
 import { ProfesoresComponent } from './pages/profesores/profesores.component';
 import { SharedModule } from '../shared/shared.module';
 import { MiPerfilComponent } from './pages/mi-perfil/mi-perfil.component';
+import { DirectoComponent } from './pages/directo/directo.component';
+import { Directo } from '../interfaces/directo.interface';
 
 
 
@@ -26,6 +28,7 @@ import { MiPerfilComponent } from './pages/mi-perfil/mi-perfil.component';
     PerfilCategoriaComponent,
     PerfilProfesorComponent,
     NosotrosComponent,
+    DirectoComponent,
     MiPerfilComponent
   ],
   imports: [

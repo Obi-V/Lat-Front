@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CustomButtonComponent } from '../../shared/components/custom-button/custom-button.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { ProfeDestacadoComponent } from './profe-destacado/profe-destacado.component';
 import { SliderComponent } from './slider/slider.component';
@@ -10,7 +9,8 @@ import { MaterialModule } from 'src/app/material/material.module';
 import { CardComponent } from './card/card.component';
 import { RouterModule } from '@angular/router';
 import { ProfeDestacadoPerfilComponent } from './profe-destacado-perfil/profe-destacado-perfil.component';
-
+import { VideoPlayerComponent } from './video-player/video-player.component';
+import { ChatComponent } from './chat/chat.component';
 
 
 @NgModule({
@@ -20,6 +20,8 @@ import { ProfeDestacadoPerfilComponent } from './profe-destacado-perfil/profe-de
     SliderComponent,
     CardComponent,
     ProfeDestacadoPerfilComponent,
+    VideoPlayerComponent,
+    ChatComponent
   ],
   imports: [
     CommonModule,
@@ -28,12 +30,14 @@ import { ProfeDestacadoPerfilComponent } from './profe-destacado-perfil/profe-de
     MaterialModule,
     RouterModule
   ],
-  exports:[
+  exports: [
     CarouselComponent,
     ProfeDestacadoComponent,
     SliderComponent,
     CardComponent,
-    ProfeDestacadoPerfilComponent
+    ProfeDestacadoPerfilComponent,
+    VideoPlayerComponent,
+    ChatComponent
   ]
 })
 export class PageComponentsModule { }

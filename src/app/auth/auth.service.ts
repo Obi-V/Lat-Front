@@ -112,8 +112,8 @@ export class AuthService {
 
     const body = nuevoUsuario
 
-    return this.http.put<UpdateResponse>(url, body, {headers}).pipe(
-      tap(() =>  this.router.navigateByUrl(this.router.url)),
+    return this.http.put<UpdateResponse>(url, body, { headers }).pipe(
+      tap(() => this.router.navigateByUrl(this.router.url)),
       catchError(err => {
         console.error('Error al actualizar usuario:', err);
         return throwError(() => 'Error al actualizar usuario. Por favor, verifica tus credenciales e intentalo de nuevo.');
