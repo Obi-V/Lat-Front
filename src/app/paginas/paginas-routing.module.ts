@@ -14,49 +14,49 @@ import { isAuthenticatedGuard } from '../guards/is-authenticated.guard';
 
 const routes: Routes = [
   {
-    path:'',
+    path: '',
     component: LayoutComponent,
-    children:[
+    children: [
       {
-        path:'principal',
-        component:MainPageComponent
+        path: 'principal',
+        component: MainPageComponent
       },
       {
-        path:'categorias',
-        component:CategoriasComponent
+        path: 'categorias',
+        component: CategoriasComponent
       },
       {
-        path:'categorias/prueba',
+        path: 'categorias/prueba',
         component: PerfilCategoriaComponent
       },
       {
-        path:'directo',
-        component:DirectoComponent
+        path: 'directo',
+        component: DirectoComponent
       },
       {
-        path:'perfil-profesor/profeprueba',
-        component:PerfilProfesorComponent
+        path: 'perfil-profesor/profeprueba',
+        component: PerfilProfesorComponent
       },
       {
-        path:'profesores',
-        component:ProfesoresComponent
+        path: 'profesores',
+        component: ProfesoresComponent
       },
       {
-        path:'asistencia',
-        component:AsistenciaComponent
+        path: 'asistencia',
+        component: AsistenciaComponent
       },
       {
-        path:'nosotros',
-        component:NosotrosComponent
+        path: 'nosotros',
+        component: NosotrosComponent
       },
       {
-        path:'mi-perfil',
+        path: 'mi-perfil',
         canActivate: [isAuthenticatedGuard],
         component: MiPerfilComponent
       },
       {
-        path:'**',
-        redirectTo:'principal'
+        path: '**',
+        redirectTo: 'principal'
       },
     ]
   }
