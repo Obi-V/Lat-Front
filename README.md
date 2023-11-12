@@ -1,27 +1,44 @@
-# Lat
+# FRONT DEL PROYECTO LAT
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.5.
+¡Bienvenido al Frontend de la aplicación 'LAT', realizado principalmente en Angular! 
+Una plataforma web que conecta profesores particulares con usuarios que buscan aprender.
 
-## Development server
+## Características
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Registro de Usuarios
 
-## Code scaffolding
+La aplicación permite a los usuarios registrarse proporcionando su nombre de usuario, rol, correo electrónico y contraseña. Estos datos se guardan para su almacenamiento seguro en la base de datos, si la bbdd no existe la crea.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Inicio de Sesión de Usuarios
 
-## Build
+Los usuarios pueden iniciar sesión en el front utilizando su nombre de usuario y contraseña. El frontend envía la información de inicio de sesión al backend, que verifica las credenciales y emite un JWT válido en caso de éxito que se guardará en localStorage.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Spring Security en el Backend
 
-## Running unit tests
+La aplicación utiliza Spring Security en el backend para reforzar la seguridad y gestionar la autenticación y autorización de los usuarios. Spring Security proporciona una capa robusta de protección para las API y recursos, garantizando un acceso seguro a los datos y funcionalidades del servidor.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
+## Instalación
+1. Debes levantar el backend de la anterior aplicación, es necesario para hacer login o no tendrás acceso a muchas páginas
+2. Clona el repositorio desde tu IDE (En mi caso uso Visual Studio Code): `git clone https://github.com/Obi-V/Lat-Front/`
+3. En la ruta dentro del proyecto `\servidor-rtmp\app.js` se encuentra el servidor rtmp para poder hacer directos, hay que cambiar la propiedad ` trans: {
+    ffmpeg:` y poner una ruta en tu disco duro para alojar el directo.
+4. En la consola viajar a la ruta `cd /Lat/servidor-rtmp` e introducir `node app.js` para levantar el servidor de streaming ( Si no queremos probar la funcionalidad de directo no hace falta)
+5. En la consola viajar a la ruta donde esté el proyecto `cd **/lat` e introducir `ng seve` para levantar la aplicación
+6. Ejecutar la aplicación mediante el método main 'LatApplication' en la carpeta **\ProyectoLAT\src\main\java\org\lat\LatApplication.java
+7. Tu aplicación ya está lista para usarse.
+   
+## Configuración de OBS
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+La aplicación utiliza una base de datos MySQL para almacenar la información. Asegúrate de seguir estos pasos para configurar la conexión con la base de datos:
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Uso
+
+1. Regístrate como profesor o estudiante.
+2. Explora la lista de profesores o publica tus habilidades como profesor.
+3. Inicia sesión y comunícate con otros usuarios mediante la función de mensajería interna.
+4. Asiste a clases en directo dentro de la plataforma.
+5. Deja calificaciones y reseñas.
+
