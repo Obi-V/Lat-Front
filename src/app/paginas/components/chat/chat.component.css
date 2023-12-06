@@ -1,5 +1,6 @@
 .cuadro-rectangular {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
   height: 100%;
   text-align: center;
   padding: 0px;
@@ -7,11 +8,7 @@
 }
 
 .comentarios{
-  height: 85%;
+  flex-grow: 1;
   background-color: white;
   padding: 10px
-}
-
-.comentar{
-  border-top: 2px solid;
 }
