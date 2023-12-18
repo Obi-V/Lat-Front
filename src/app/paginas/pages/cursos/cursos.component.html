@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 text-center">
+      <h1 class="primario mt-5">Mis cursos y clases</h1>
+    </div>
+    <div class="col-12 mt-5 ">
+      <div class="row">
+        <div *ngFor="let curso of misCursos" class="col-md-6 mb-3" style="max-width: 400px;">
+          <my-card [cardPC]="curso"></my-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

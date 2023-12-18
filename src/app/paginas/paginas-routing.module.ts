@@ -11,6 +11,8 @@ import { PerfilCategoriaComponent } from './pages/perfil-categoria/perfil-catego
 import { NosotrosComponent } from './pages/nosotros/nosotros.component';
 import { MiPerfilComponent } from './pages/mi-perfil/mi-perfil.component';
 import { isAuthenticatedGuard } from '../guards/is-authenticated.guard';
+import { CursosComponent } from './pages/cursos/cursos.component';
+import { CursoComponent } from './pages/Curso/curso.component';
 
 const routes: Routes = [
   {
@@ -53,6 +55,14 @@ const routes: Routes = [
         path: 'mi-perfil',
         canActivate: [isAuthenticatedGuard],
         component: MiPerfilComponent
+      },
+      {
+        path: 'cursos',
+        component: CursosComponent
+      },
+      {
+        path: 'curso',
+        component: CursoComponent
       },
       {
         path: '**',

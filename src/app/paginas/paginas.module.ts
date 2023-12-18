@@ -15,6 +15,8 @@ import { ProfesoresComponent } from './pages/profesores/profesores.component';
 import { SharedModule } from '../shared/shared.module';
 import { MiPerfilComponent } from './pages/mi-perfil/mi-perfil.component';
 import { DirectoComponent } from './pages/directo/directo.component';
+import { CursosComponent } from './pages/cursos/cursos.component';
+import { CursoComponent } from './pages/Curso/curso.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { DirectoComponent } from './pages/directo/directo.component';
     PerfilProfesorComponent,
     NosotrosComponent,
     DirectoComponent,
-    MiPerfilComponent
+    MiPerfilComponent,
+    CursosComponent,
+    CursoComponent
   ],
   imports: [
     CommonModule,

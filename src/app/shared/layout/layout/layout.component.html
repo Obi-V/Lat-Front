@@ -34,7 +34,6 @@
           </mat-list-item>
         </div>
       </mat-nav-list>
-
     </div>
 
     <!-- Desplegable si está en la ruta auth -->
@@ -74,8 +73,8 @@
       <div *ngIf="getRootUrl()!='auth';">
         <!-- Si está autenticado: logout, carrito -->
         <div *ngIf="authenticated()">
-          <button mat-icon-button>
-            <mat-icon>shopping_cart</mat-icon>
+          <button [routerLink]="['/pages/cursos']" mat-icon-button>
+            <mat-icon>menu_book</mat-icon>
           </button>
           <button (click)="logout()" mat-icon-button>
             <mat-icon>logout</mat-icon>
@@ -89,7 +88,6 @@
         </div>
       </div>
     </div>
-
   </mat-toolbar>
 
   <!-- Contenido de la ruta -->

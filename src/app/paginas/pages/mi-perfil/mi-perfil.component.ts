@@ -38,7 +38,7 @@ export class MiPerfilComponent {
     return string.split(',').map(item => item.trim());
   }
 
-  // Obtener los valores del formulario transofrmando a lista habilidades e idiomas
+  // Obtener los valores del formulario transformando a lista habilidades e idiomas
   obtenerValoresFormulario():UsuarioUpdate {
 
     const { habilidades, idiomas, username, email, role, ...valores } = this.myForm.value;

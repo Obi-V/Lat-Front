@@ -8,10 +8,8 @@ import { CardPC } from '../../../interfaces/cardPC.interface';
 })
 export class MainPageComponent {
 
-
   //Propiedades para insertar en los slides
   loMasBuscado: CardPC[] = [
-
     {
       cardTitle: 'Curso de Java y spring Boot 25h', cardSubtitle: 'Armando Redes',
       cardDescription: 'Breve descripción del curso de java y spring boot 25h, lo de 25h no se lo cree nadie.', img: '../assets/img/springlogo.png',
