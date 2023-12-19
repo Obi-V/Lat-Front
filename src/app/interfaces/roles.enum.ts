@@ -6,4 +6,7 @@ export enum Roles{
   PROFESOR    = 'PROFESOR',
 
   ALUMNO      = 'ALUMNO',
+
+  BLOQUEADO   = 'BLOQUEADO',
+
 }

@@ -3,9 +3,13 @@ export * from './cardCategoria.interface'
 
 export * from './cardPC.interface'
 
+export * from './cardPCDTO.interface'
+
 export * from './categoria.interface'
 
 export * from './curso.interface'
+
+export * from './cursoDTO.interface'
 
 export * from './directo.interface'
 

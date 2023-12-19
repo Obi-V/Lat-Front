@@ -1,10 +1,9 @@
-import { Video } from "./video.interface";
 
 export interface Curso {
-
+  map(arg0: (curso: any) => import("./cardPC.interface").CardPC): import("./cardPC.interface").CardPC[];
+  descripcion:     string;
   nombre:          string;
   subtitulo:       string;
-  description:     string;
   img:             string;
-  videos:          Video[];
+  url:             string;
 }

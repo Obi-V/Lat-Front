@@ -29,6 +29,10 @@
         <p class="m-2">{{cardPC.cardDescription}}</p>
       </mat-card-actions>
     </a>
+    <div *ngIf="button" class="p-3">
+      <custom-button [text]="'Añadir'"></custom-button>
+    </div>
+
 </mat-card>
 
 <!-- En caso de que sea para la página "Categorías" -->

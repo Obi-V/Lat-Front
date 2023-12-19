@@ -1,0 +1,41 @@
+<section class="container-fluid primario text-center p-0 mt-5">
+    <h1 class="display-3 text-center m-3 secundario">BIENVENIDO ADMIN</h1>
+    <section class="col pb-2">
+        <span class="m-5"></span>
+    </section>
+</section>
+
+<section class="row align-items-center bg-secundario mt-3 p-0 m-0">
+    <section class="container-fluid">
+        <h1 class="text-center primario mt-5">
+            Aquí puedes administrar a todos los usuarios
+        </h1>
+        <section class="p-3 pl-5 bg-white text-center mb-5 border border-warning lead  ">
+            <section *ngFor="let usuario of allUsuarios">
+                <h3>{{usuario.username}}</h3>
+                <div *ngIf="usuario.email">
+                    <b>Email:</b>
+                    {{usuario.email}}
+                </div>
+                <div *ngIf="usuario.role">
+                    <b>Rol:</b>
+                    {{usuario.role}}
+                </div>
+                <br>
+                <div *ngIf="usuario.role != 'ADMIN'" class="row">
+                  <div class="col p-0">
+                      <custom-button (click)="blockUser(usuario.id)" [text]="'Bloquear'"></custom-button>
+                  </div>
+                  <div class="col p-0">
+                    <custom-button (click)="editUser(usuario.id)" [text]="'Editar'"></custom-button>
+                  </div>
+                  <div class="col p-0">
+                      <custom-button (click)="eliminarUser(usuario.id)" [text]="'Eliminar'"></custom-button>
+                  </div>
+              </div>
+
+                <hr>
+            </section>
+        </section>
+    </section>
+</section>

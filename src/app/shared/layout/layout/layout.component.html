@@ -32,13 +32,23 @@
           <mat-icon matListItemIcon>{{cuentaLink.icon}}</mat-icon>
           {{cuentaLink.label}}
           </mat-list-item>
+          <div *ngIf="admin()">
+            <mat-list-item
+          [routerLink]="administrador.url"
+          (click)="sidenav.toggle()"
+          >
+          <mat-icon matListItemIcon>{{administrador.icon}}</mat-icon>
+          {{administrador.label}}
+          </mat-list-item>
+
+          </div>
         </div>
       </mat-nav-list>
     </div>
 
     <!-- Desplegable si está en la ruta auth -->
     <ng-template #auth>
-      <mat-nav-list >
+      <mat-nav-list>
         <mat-list-item *ngFor="let item of noLogeado"
         [routerLink]="item.url"
         (click)="sidenav.toggle()"
@@ -96,7 +106,8 @@
 
   <!-- Comprobación de la ruta para usar un footer fixed o no -->
   <div *ngIf="getRootUrl()!='auth'; else authFooter">
-    <my-footer/>
+    <div class="m-5 invisible">Esto solo es para el margen, pero es invisible</div>
+    <my-footer class="fixed-bottom mt-5"/>
   </div>
 
   <!-- Necesito que el footer quede pegado abajo siempre en la ruta "/auth" porque si no se queda en medio de la pantalla

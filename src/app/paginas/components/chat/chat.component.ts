@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import { LatService } from 'src/app/shared/lat.service';
+import { Usuario } from '../../../interfaces/usuario.interface';
+import { AuthService } from 'src/app/auth/auth.service';
 
 
 @Component({
@@ -8,9 +11,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChatComponent {
 
+  private authService = inject(AuthService)
+  public usuario = this.authService.currentUser()
+  public nickName = this.usuario?.username
+
   comentarios: string[] = [];
   nuevoComentario: string = '';
-  maxComentarios: number = 9;
+  maxComentarios: number = 12;
 
   addComentario() {
     if (this.nuevoComentario.trim() !== '') {

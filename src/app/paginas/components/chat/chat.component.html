@@ -1,14 +1,26 @@
 <div class="cuadro-rectangular bg-primario m-3 mt-0 p-3 ">
-  <div class="pt-2 encabezado h3">CHAT</div>
-  <hr class="my-2">
-  <div class="comentarios">
-    <div id="comments-container">
-      <div *ngFor="let comentario of comentarios" class="comment bg-light p-2 mb-2">{{ comentario }}</div>
+    <div class="pt-2 encabezado h3">CHAT</div>
+    <hr class="my-2">
+    <div class="comentarios p-3">
+        <div id="comments-container">
+            <div
+                *ngFor="let comentario of comentarios"
+                class="row bg-light p-0 mb-2"
+            >
+                <div class="col-auto p-0"> <strong>{{ nickName }}:</strong> </div>
+                <div class="col p-0">{{ comentario }}</div>
+
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="comentar bg-secundario p-2">
-    <input type="text" [(ngModel)]="nuevoComentario" (keydown.enter)="addComentario()" placeholder="Comentar..." id="comment-input" class="form-control">
-  </div>
+    <div class="comentar bg-secundario p-2">
+        <input
+            type="text"
+            [(ngModel)]="nuevoComentario"
+            (keydown.enter)="addComentario()"
+            placeholder="Comentar..."
+            id="comment-input"
+            class="form-control"
+        >
+    </div>
 </div>
-
-

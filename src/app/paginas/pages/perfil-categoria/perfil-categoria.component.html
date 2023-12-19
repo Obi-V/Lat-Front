@@ -4,7 +4,7 @@
 
 <section class="container-fluid mt-4">
     <slider
-        [slides]="loMasVendido"
+        [slides]="misCursos"
         [title]=" 'Lo más vendido' "
     ></slider>
 </section>
@@ -12,13 +12,27 @@
 <profe-destacado/>
 
 
-<section class="container-fluid mt-4">
-  <slider
-      [slides]="loMasVendido"
-      [title]=" 'Lo más vendido' "
-  ></slider>
-  <slider
-  [slides]="loMasVendido"
-  [title]=" 'Lo más vendido' "
-  ></slider>
+<section class="container center mt-4">
+  <div class="col-12 mt-5">
+    <div class="row justify-content-center align-items">
+      <ng-container *ngFor="let curso of misCursos; let i = index">
+        <div *ngIf="i < 3" class="col-md-6 mb-3" style="max-width: 400px;">
+          <my-card [cardPC]="curso" [button]="true" (click)="aniadir(curso.id)"></my-card>
+        </div>
+      </ng-container>
+    </div>
+  </div>
 </section>
+<section class="container center mt-4">
+  <div class="col-12 mt-5">
+    <div class="row justify-content-center align-items">
+      <ng-container *ngFor="let curso of misCursos; let i = index">
+        <div *ngIf="i >= 3 && i < 6" class="col-md-6 mb-3" style="max-width: 400px;">
+          <my-card [cardPC]="curso" [button]="true" (click)="aniadir(curso.id)"></my-card>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>
+
+

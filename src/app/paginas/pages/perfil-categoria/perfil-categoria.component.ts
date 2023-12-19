@@ -1,45 +1,55 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import { Curso, Usuario } from 'src/app/interfaces';
 import { CardPC } from 'src/app/interfaces/cardPC.interface';
+import { CardPCDTO } from 'src/app/interfaces/cardPCDTO.interface';
+import { CursoDTO } from 'src/app/interfaces/cursoDTO.interface';
+import { LatService } from 'src/app/shared/lat.service';
 
 @Component({
   selector: 'app-perfil-categoria',
   templateUrl: './perfil-categoria.component.html',
   styleUrls: ['./perfil-categoria.component.css']
 })
-export class PerfilCategoriaComponent {
+
+export class PerfilCategoriaComponent implements OnInit{
 
   categoria =  { name: 'Front End', img: '../assets/img/Front end.png'}
 
-  loMasVendido: CardPC[] = [
+  public curso!: Curso
+  public profe!: Usuario
 
-    {
-      cardTitle: 'Curso de Java y spring Boot 25h', cardSubtitle: 'Armando Redes',
-      cardDescription: 'Breve descripción del curso de java y spring boot 25h, lo de 25h no se lo cree nadie.', img: '../assets/img/springlogo.png',
-      url: '/pages/categorias/prueba'
-    },
+  private latService = inject(LatService)
 
-    {
-      cardTitle: 'Curso de JavaScript para principiantes', cardSubtitle: 'Antonio Jesús Lopez Gambero',
-      cardDescription: 'Breve descripción del curso de JavaScript para principiantes, el curso tiene un total de 30h lectivas.', img: '../assets/img/jslogo.png',
-      url: '/pages/categorias/prueba'
-    },
+  misCursos :any= [];
 
-    {
-      cardTitle: 'Antonio Hidalgo', cardSubtitle: 'Profesor de DAW',
-      cardDescription: 'Profesor particular especialista en DAW, cuenta con mucha experiencia docente. ', img: '../assets/img/Profe2.png',
-      url: '/pages/perfil-profesor/profeprueba'
-    },
+  ngOnInit(): void {
+    this.getcurso();
+  }
 
-    {
-      cardTitle: 'Curso de Swift de 0 a experto', cardSubtitle: 'Florencia Venturini',
-      cardDescription: 'Breve descripción del curso Curso de Swift de 0 a experto', img: '../assets/img/Swift2.png',
-      url: '/pages/categorias/prueba'
-    },
+  getcurso() {
+    this.latService.getAllCursosDTO().subscribe(
+      (cursos: CursoDTO[]) => {
+        cursos.forEach(curso => {
+          this.misCursos.push(this.convertirACard(curso));
+        });
+        console.log(this.misCursos);
+      }
+    );
+  }
 
-    {
-      cardTitle: 'Mónica Aranjuez', cardSubtitle: 'Profesora especializada en back end',
-      cardDescription: 'Profesor particular especialista en backend, cuenta con mucha experiencia docente.', img: '../assets/img/Profe4.png',
-      url: '/pages/perfil-profesor/profeprueba'
-    },
-  ]
+  convertirACard(curso: CursoDTO): CardPCDTO {
+    return {
+      id:        curso.id,
+      cardTitle: curso.nombre,
+      cardSubtitle: curso.subtitulo,
+      cardDescription: curso.descripcion,
+      img: curso.url,
+      url: '/pages/curso'
+    };
+  }
+
+  aniadir(cursoId: number){
+    this.latService.aniadirCurso(cursoId).subscribe()
+
+  }
 }

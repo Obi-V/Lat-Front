@@ -17,6 +17,8 @@ import { MiPerfilComponent } from './pages/mi-perfil/mi-perfil.component';
 import { DirectoComponent } from './pages/directo/directo.component';
 import { CursosComponent } from './pages/cursos/cursos.component';
 import { CursoComponent } from './pages/Curso/curso.component';
+import { AdministradorComponent } from './pages/administrador/administrador.component';
+import { EditarPerfilComponent } from './pages/editar-perfil copy/editar-perfil.component';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { CursoComponent } from './pages/Curso/curso.component';
     DirectoComponent,
     MiPerfilComponent,
     CursosComponent,
-    CursoComponent
+    CursoComponent,
+    AdministradorComponent,
+    EditarPerfilComponent
   ],
   imports: [
     CommonModule,

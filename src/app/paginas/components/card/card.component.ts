@@ -15,4 +15,8 @@ export class CardComponent {
 
   @Input()
   public cardCategoria ?: cardCategoria;
+
+  @Input()
+  public button?: boolean;
+
 }

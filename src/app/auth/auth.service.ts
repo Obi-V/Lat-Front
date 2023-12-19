@@ -64,6 +64,14 @@ export class AuthService {
     );
   }
 
+  oneUser(idUser: number) {
+    const url = `http://localhost:8080/lat/usuario/${idUser}`;
+    return this.http.get<Usuario>(url)
+      .pipe(
+        catchError(err => throwError(() => err.error.message))
+      );
+  }
+
   checkAuthStatus(): Observable<boolean> {
 
     const url = this.baseUrl + '/check-token'
@@ -100,6 +108,19 @@ export class AuthService {
     /* Recargamos la página para que nos saque en caso de necesitar estar autenticados
        Yo lo hice con "router" de angular pero se puede hacer más facil con javascript: window.location.reload()*/
     this.router.navigateByUrl(this.router.url);
+  }
+
+  updateOtroUser(nuevoUsuario: UsuarioUpdate, idUser: number) {
+    const url = 'http://localhost:8080/lat/usuario/' + idUser
+
+    const body = nuevoUsuario
+
+    return this.http.put<UpdateResponse>(url, body).pipe(
+      tap(() => this.router.navigateByUrl(this.router.url)),
+      catchError(err => {
+        console.error('Error al actualizar usuario:', err);
+        return throwError(() => 'Error al actualizar usuario. Por favor, verifica tus credenciales e intentalo de nuevo.');
+      }))
   }
 
   updateUser(nuevoUsuario: UsuarioUpdate, jwt: string) {

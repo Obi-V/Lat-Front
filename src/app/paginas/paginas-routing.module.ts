@@ -13,6 +13,9 @@ import { MiPerfilComponent } from './pages/mi-perfil/mi-perfil.component';
 import { isAuthenticatedGuard } from '../guards/is-authenticated.guard';
 import { CursosComponent } from './pages/cursos/cursos.component';
 import { CursoComponent } from './pages/Curso/curso.component';
+import { AdministradorComponent } from './pages/administrador/administrador.component';
+import { esAdminGuard } from '../guards/es-admin.guard';
+import { EditarPerfilComponent } from './pages/editar-perfil copy/editar-perfil.component';
 
 const routes: Routes = [
   {
@@ -33,6 +36,7 @@ const routes: Routes = [
       },
       {
         path: 'directo',
+        canActivate: [isAuthenticatedGuard],
         component: DirectoComponent
       },
       {
@@ -57,12 +61,24 @@ const routes: Routes = [
         component: MiPerfilComponent
       },
       {
+        path: 'editar-perfil/:id',
+        component: EditarPerfilComponent
+      },
+      {
         path: 'cursos',
+        canActivate: [isAuthenticatedGuard],
         component: CursosComponent
       },
       {
         path: 'curso',
+        canActivate: [isAuthenticatedGuard],
         component: CursoComponent
+      },
+      {
+        path: 'administrador',
+        canActivate: [esAdminGuard],
+        component: AdministradorComponent
+
       },
       {
         path: '**',
